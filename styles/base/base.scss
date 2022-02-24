@@ -1,0 +1,37 @@
+*,
+::after,
+::before {
+   margin: 0;
+   padding: 0;
+}
+html {
+   //defines what 1rem is
+   font-size: 62.5%; //1 rem = 10px
+}
+body {
+   font-size: 1.4rem;
+   font-family: $font-primary;
+}
+
+h1 {
+   font-size: 5rem !important;
+}
+h2 {
+   font-size: 3.2rem !important;
+}
+h3 {
+   font-size: 2.5rem !important;
+}
+h4 {
+   font-size: 2rem !important;
+}
+h5 {
+   font-size: 1.7rem !important;
+}
+h6 {
+   font-size: 1.5rem !important;
+}
+
+span {
+   font-size: 1.2rem;
+}

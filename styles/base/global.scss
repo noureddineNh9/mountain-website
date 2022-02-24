@@ -1,0 +1,19 @@
+.main {
+   overflow-x: hidden;
+}
+.content {
+   margin-left: 250px;
+   transition: margin-left 0.3s;
+}
+.heading__1 {
+   font-family: $font-nav;
+   letter-spacing: 8px;
+   font-size: 8rem !important;
+   text-align: center;
+   color: $color-1;
+}
+.heading__2 {
+   text-align: center;
+   font-style: italic;
+   color: rgb(185, 185, 185);
+}

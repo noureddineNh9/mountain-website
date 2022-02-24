@@ -1,0 +1,195 @@
+$colro__1: #c7c7c79f;
+
+:root {
+   --card-width: 40rem;
+   --card-height: 40rem;
+   --card-transition-duration: 800ms;
+   --card-transition-easing: ease;
+}
+
+.slider__1 {
+   margin-top: calc(var(--card-width) * 3 / 4);
+   position: relative;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   .card__list {
+      position: absolute;
+      width: 100%;
+      max-width: calc(3 * var(--card-width));
+      height: auto;
+      .cards__wrapper {
+         position: relative;
+         width: 100%;
+         height: 100%;
+         .card {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%)
+               translateX(var(--card-translateX-offset))
+               scale(var(--card-scale-offset));
+            display: inline-block;
+            width: var(--card-width);
+            height: var(--card-height);
+            transition: transform var(--card-transition-duration)
+               var(--card-transition-easing);
+            user-select: none;
+
+            clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+
+            &::before {
+               content: "";
+               position: absolute;
+               left: 0;
+               top: 0;
+               width: 100%;
+               height: 100%;
+               background: rgba(255, 255, 255, 0.877);
+               z-index: 1;
+               transition: opacity var(--card-transition-duration)
+                  var(--card-transition-easing);
+               opacity: calc(1 - var(--opacity));
+            }
+
+            .card__image {
+               position: relative;
+               width: 100%;
+               height: 100%;
+            }
+            .card__image img {
+               position: absolute;
+               left: 0;
+               top: 0;
+               width: 100%;
+               height: 100%;
+               object-fit: cover;
+            }
+         }
+
+         .current--card {
+            --card-translateX-offset: 0;
+            --card-scale-offset: 1.2;
+            --opacity: 0.8;
+            z-index: 10;
+         }
+         .previous--card {
+            --card-translateX-offset: calc(-1 * var(--card-width) * 0.8);
+         }
+         .next--card {
+            --card-translateX-offset: calc(var(--card-width) * 0.8);
+         }
+         .previous--card,
+         .next--card {
+            --card-scale-offset: 0.9;
+            --opacity: 0.4;
+            .card__desc {
+               display: none;
+            }
+         }
+      }
+
+      .slide__btn {
+         position: absolute;
+         transform: translateY(-50%);
+         z-index: 100;
+
+         .icon i {
+            font-size: 6rem;
+            color: #192a44cb;
+         }
+      }
+      .left__btn {
+         left: 5%;
+      }
+      .right__btn {
+         right: 5%;
+      }
+   }
+
+   .card__info {
+      z-index: 20;
+      position: absolute;
+      color: #000;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      width: 100%;
+      .title {
+         color: white;
+         font-weight: 500;
+      }
+
+      .desc {
+         font-family: $font-title-2;
+         color: #f1d251;
+         font-weight: 500;
+      }
+
+      .details {
+         width: 100%;
+         max-width: 70rem;
+         transform: translateX(-50%);
+         left: 50%;
+         top: 18rem;
+         position: absolute;
+         &::before {
+            position: absolute;
+            content: "";
+            width: 3px;
+            height: 100%;
+            background: $colro__1;
+            left: 50%;
+            transform: translateX(-50%);
+         }
+         &::after {
+            position: absolute;
+            content: "";
+            width: 1.2rem;
+            height: 1.2rem;
+            border-radius: 50%;
+            background: $colro__1;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            top: 0;
+         }
+         .empty__para {
+            height: 15rem;
+         }
+
+         .left__para,
+         .right__para {
+            color: rgb(168, 168, 168);
+            font-size: 1.2rem !important;
+            letter-spacing: 0.3rem;
+            word-break: break-word;
+            width: 100%;
+            margin-bottom: 5rem;
+            position: relative;
+
+            &::after {
+               position: absolute;
+               content: "";
+               width: 1.2rem;
+               height: 1.2rem;
+               border-radius: 50%;
+               background: $colro__1;
+               transform: translate(-50%, -50%);
+               left: 50%;
+               top: 1rem;
+            }
+         }
+
+         .left__para {
+            padding-right: 52%;
+         }
+
+         .right__para {
+            padding-left: 52%;
+         }
+      }
+   }
+}

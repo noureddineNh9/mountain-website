@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Mountain</title>
+
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script
+         src="https://kit.fontawesome.com/b875b8245f.js"
+         crossorigin="anonymous"
+      ></script>
+      <link rel="stylesheet" href="./styles/main.css" />
+   </head>
+   <body>
+      <div class="main">
+         <nav>
+            <div class="left__list">
+               <ul>
+                  <li>home</li>
+                  <li>destinations</li>
+                  <li>gallery</li>
+               </ul>
+            </div>
+            <div class="logo__cnt px-8 text-center">
+               <img class="logo" src="./assets/logo2.png" alt="logo" />
+               <h2>Mountain</h2>
+            </div>
+            <div class="right__list">
+               <ul>
+                  <li>review</li>
+                  <li>explore</li>
+                  <li>contact</li>
+               </ul>
+            </div>
+         </nav>
+
+         <section id="header" class="header mb-40">
+            <div>
+               <span class="subtitle">Road to everest</span>
+               <span class="title">NEPAL</span>
+               <div class="map">
+                  <img src="./assets/images/map.svg" alt="" />
+                  <div class="area start__area">
+                     <h2>Lukla</h2>
+                     <h5>2860 m</h5>
+                  </div>
+                  <div class="area end__area">
+                     <h2>Everest</h2>
+                     <h5>8848 m</h5>
+                  </div>
+               </div>
+               <button>start booking</button>
+            </div>
+         </section>
+
+         <section id="program">
+            <h4 class="heading__2">What should I be preapared for ?</h4>
+            <h1 class="heading__1">PROGRAM</h1>
+
+            <div class="slider__1">
+               <div class="card__list">
+                  <button class="slide__btn left__btn">
+                     <div class="icon">
+                        <i class="fas fa-angle-left"></i>
+                     </div>
+                  </button>
+
+                  <div class="cards__wrapper">
+                     <div class="card current--card">
+                        <div class="card__image">
+                           <img src="./assets/images/card-1.jpg" alt="" />
+                        </div>
+                     </div>
+
+                     <div class="card next--card">
+                        <div class="card__image">
+                           <img src="./assets/images/card-2.jpeg" alt="" />
+                        </div>
+                     </div>
+
+                     <div class="card previous--card">
+                        <div class="card__image">
+                           <img src="./assets/images/card-3.jpg" alt="" />
+                        </div>
+                     </div>
+                  </div>
+
+                  <button class="slide__btn right__btn">
+                     <div class="icon">
+                        <i class="fas fa-angle-right"></i>
+                     </div>
+                  </button>
+               </div>
+
+               <div class="card__info">
+                  <h2 class="text title"></h2>
+                  <h3 class="text desc"></h3>
+                  <div class="details">
+                     <div class="empty__para"></div>
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         <section class="h-screen"></section>
+      </div>
+
+      <script
+         type="text/javascript"
+         src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js"
+      ></script>
+      <script src="./js/main.js"></script>
+      <script src="./js/slider__1.js"></script>
+   </body>
+</html>
