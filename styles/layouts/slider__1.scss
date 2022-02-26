@@ -1,21 +1,24 @@
 $colro__1: #c7c7c79f;
 
 :root {
-   --card-width: 40rem;
-   --card-height: 40rem;
+   --card-width: 35rem;
+   --card-height: 35rem;
    --card-transition-duration: 800ms;
    --card-transition-easing: ease;
 }
 
 .slider__1 {
-   margin-top: calc(var(--card-width) * 3 / 4);
    position: relative;
    width: 100%;
    height: 100%;
    display: flex;
    justify-content: center;
    align-items: center;
+
+   margin-bottom: 70px;
    .card__list {
+      top: calc(var(--card-width) * 4 / 5);
+
       position: absolute;
       width: 100%;
       max-width: calc(3 * var(--card-width));
@@ -37,42 +40,55 @@ $colro__1: #c7c7c79f;
             transition: transform var(--card-transition-duration)
                var(--card-transition-easing);
             user-select: none;
-
-            clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
-
-            &::before {
-               content: "";
-               position: absolute;
-               left: 0;
-               top: 0;
-               width: 100%;
-               height: 100%;
-               background: rgba(255, 255, 255, 0.877);
-               z-index: 1;
-               transition: opacity var(--card-transition-duration)
-                  var(--card-transition-easing);
-               opacity: calc(1 - var(--opacity));
-            }
-
             .card__image {
                position: relative;
                width: 100%;
                height: 100%;
+               clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+
+               img {
+                  position: absolute;
+                  left: 0;
+                  top: 0;
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+               }
+               &::before {
+                  content: "";
+                  position: absolute;
+                  left: 0;
+                  top: 0;
+                  width: 100%;
+                  height: 100%;
+                  background: rgba(255, 255, 255, 0.877);
+                  z-index: 1;
+                  transition: opacity var(--card-transition-duration)
+                     var(--card-transition-easing);
+                  opacity: calc(1 - var(--opacity));
+               }
             }
-            .card__image img {
+
+            &::after {
+               content: "";
                position: absolute;
-               left: 0;
-               top: 0;
-               width: 100%;
-               height: 100%;
-               object-fit: cover;
+               transform: translate(-50%, -50%);
+               top: 50%;
+               left: 50%;
+               width: calc(var(--card-width) + 2px);
+               height: calc(var(--card-width) + 2px);
+               background: rgba(0, 0, 0, 0.534);
+               z-index: -1;
+               transition: opacity var(--card-transition-duration)
+                  var(--card-transition-easing);
+
+               clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
             }
          }
-
          .current--card {
             --card-translateX-offset: 0;
             --card-scale-offset: 1.2;
-            --opacity: 0.8;
+            --opacity: 1;
             z-index: 10;
          }
          .previous--card {
@@ -110,12 +126,10 @@ $colro__1: #c7c7c79f;
    }
 
    .card__info {
+      margin-top: calc(var(--card-width) * 2 / 3);
       z-index: 20;
-      position: absolute;
+      position: relative;
       color: #000;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
       text-align: center;
       width: 100%;
       .title {
@@ -134,8 +148,8 @@ $colro__1: #c7c7c79f;
          max-width: 70rem;
          transform: translateX(-50%);
          left: 50%;
-         top: 18rem;
-         position: absolute;
+         margin-top: 130px;
+         position: relative;
          &::before {
             position: absolute;
             content: "";

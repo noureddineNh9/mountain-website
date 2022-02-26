@@ -1,0 +1,148 @@
+#program {
+   background-image: linear-gradient(
+         to bottom,
+         rgb(255, 255, 255),
+         rgba(255, 255, 255, 0.849)
+      ),
+      url("../assets/images/program-bg.jpg");
+   background-size: cover;
+
+   padding-bottom: 300px;
+
+   .heading__1 {
+      color: $color-1;
+   }
+   .heading__2 {
+      color: rgb(185, 185, 185);
+   }
+}
+
+#challenge {
+   z-index: 20;
+   margin-top: -200px;
+   padding-top: 250px;
+   padding-bottom: 200px;
+   background-image: linear-gradient(to bottom, #001134, #10187e4d, #001134),
+      url("../assets/images/challenge-bg.jpg");
+   background-size: cover;
+   background-position: center;
+
+   clip-path: polygon(0 0, 100% 200px, 100% 100%, 0% calc(100% - 200px));
+
+   .heading__1 {
+      color: white;
+      margin-bottom: 12rem;
+   }
+   .heading__2 {
+      color: white;
+   }
+
+   .circles {
+      margin-bottom: 5rem;
+      .circle__wrapper {
+         margin: 2rem;
+         width: 18rem;
+         text-align: center;
+         .circle {
+            margin: 20px auto;
+            position: relative;
+            border: 2px solid white;
+            border-radius: 50%;
+            height: 14rem;
+            width: 14rem;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .text {
+               position: absolute;
+               font-family: $font-poppins;
+               color: white;
+               font-size: 28px;
+               letter-spacing: 0.3rem;
+               word-break: break-all;
+               font-weight: 800;
+               line-height: 32px;
+
+               transform: translate(-50%, -50%);
+               top: 50%;
+               left: 50%;
+               width: 80%;
+            }
+
+            &::after {
+               position: absolute;
+               content: "";
+               transform: translate(-50%, -50%);
+               top: 50%;
+               left: 50%;
+               width: 92%;
+               height: 92%;
+
+               border: 2px solid white;
+               border-radius: 50%;
+            }
+            &::before {
+               position: absolute;
+               content: "";
+               transform: translate(-50%, -50%);
+               top: 50%;
+               left: 50%;
+               width: 115%;
+               height: 115%;
+
+               border: 2px solid white;
+               border-radius: 50%;
+            }
+         }
+
+         .circle__desc {
+            color: white;
+            letter-spacing: 1px;
+            font-weight: 500;
+         }
+      }
+   }
+}
+
+#team {
+   margin-top: -200px;
+   padding-top: 250px;
+   padding-bottom: 100px;
+
+   background-image: linear-gradient(
+         to bottom,
+         rgb(255, 255, 255),
+         rgba(255, 255, 255, 0.849)
+      ),
+      url("../assets/images/team-bg.jpg");
+   background-size: cover;
+
+   .heading__1 {
+      color: $color-1;
+   }
+   .heading__2 {
+      color: rgb(185, 185, 185);
+   }
+}
+
+#reviews {
+   z-index: 20;
+   margin-top: -200px;
+   padding-top: 250px;
+   padding-bottom: 200px;
+   background-image: linear-gradient(to bottom, #001134, #10187e4d, #001134),
+      url("../assets/images/challenge-bg.jpg");
+   background-size: cover;
+   background-position: center;
+
+   clip-path: polygon(0 200px, 100% 0, 100% calc(100% - 200px), 0% 100%);
+
+   .heading__1 {
+      color: white;
+      margin-bottom: 12rem;
+   }
+   .heading__2 {
+      color: white;
+   }
+}

@@ -109,70 +109,38 @@ function changeInfo() {
          currentInfoEl.querySelectorAll(".text"),
          {
             duration: 0.4,
-            stagger: 0.1,
-            translateY: "-120px",
+            translateY: "120px",
             opacity: 0,
          },
          "-="
       )
       .to(
-         currentInfoEl.querySelectorAll(".details div p"),
+         currentInfoEl.querySelector(".details"),
          {
             duration: 0.4,
-            stagger: 0.1,
-            translateY: "-120px",
+            translateY: "120px",
             opacity: 0,
          },
          "-="
       )
-      .to(currentInfoEl.querySelectorAll(".details"), {
-         duration: 0.4,
-         stagger: 0.1,
-         translateY: "-120px",
-         opacity: 0,
-      })
       .call(() => {
          swapInfosClass();
       })
-      .fromTo(
+      .to(
          currentInfoEl.querySelectorAll(".text"),
-         {
-            opacity: 0,
-            translateY: "40px",
-         },
+
          {
             duration: 0.4,
-            stagger: 0.1,
+            stagger: 0.2,
             translateY: "0px",
             opacity: 1,
          }
       )
-      .fromTo(
-         currentInfoEl.querySelectorAll(".details"),
-         {
-            opacity: 0,
-            translateY: "40px",
-         },
-         {
-            duration: 0.4,
-            stagger: 0.1,
-            translateY: "0px",
-            opacity: 1,
-         }
-      )
-      .fromTo(
-         currentInfoEl.querySelectorAll(".details div p"),
-         {
-            opacity: 0,
-            translateY: "40px",
-         },
-         {
-            duration: 0.4,
-            stagger: 0.1,
-            translateY: "0px",
-            opacity: 1,
-         }
-      )
+      .to(currentInfoEl.querySelectorAll(".details"), {
+         duration: 0.4,
+         translateY: "0px",
+         opacity: 1,
+      })
       .to([buttons.prev, buttons.next], {
          duration: 0.2,
          opacity: 1,

@@ -1,0 +1,157 @@
+$colro__1: #c7c7c79f;
+
+:root {
+   --card2-width: 30rem;
+   --card2-height: 30rem;
+   --card2-transition-duration: 800ms;
+   --card2-transition-easing: ease;
+}
+
+.slider__2 {
+   position: relative;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   margin-bottom: 70px;
+   .card__list {
+      top: calc(var(--card2-width) * 4 / 5);
+
+      position: absolute;
+      width: 100%;
+      max-width: calc(3 * var(--card2-width));
+      height: auto;
+      .cards__wrapper {
+         position: relative;
+         width: 100%;
+         height: 100%;
+         filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.1));
+
+         vertical-align: middle;
+         .card {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%)
+               translateX(var(--card2-translateX-offset))
+               scale(var(--card2-scale-offset));
+            display: inline-block;
+            width: var(--card2-width);
+            height: var(--card2-height);
+            transition: transform var(--card2-transition-duration)
+               var(--card2-transition-easing);
+            user-select: none;
+            .card__image {
+               position: relative;
+               width: 100%;
+               height: 100%;
+               clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+
+               img {
+                  position: absolute;
+                  left: 0;
+                  top: 0;
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+               }
+               &::before {
+                  content: "";
+                  position: absolute;
+                  left: 0;
+                  top: 0;
+                  width: 100%;
+                  height: 100%;
+                  background: rgba(255, 255, 255, 0.877);
+                  z-index: 1;
+                  transition: opacity var(--card2-transition-duration)
+                     var(--card2-transition-easing);
+                  opacity: calc(1 - var(--opacity));
+               }
+            }
+
+            &::after {
+               content: "";
+               position: absolute;
+               transform: translate(-50%, -50%);
+               top: 50%;
+               left: 50%;
+               width: calc(var(--card2-width) + 2px);
+               height: calc(var(--card2-width) + 2px);
+               background: rgba(0, 0, 0, 0.534);
+               z-index: -1;
+               transition: opacity var(--card2-transition-duration)
+                  var(--card2-transition-easing);
+
+               clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+            }
+         }
+
+         .current--card {
+            --card2-translateX-offset: 0;
+            --card2-scale-offset: 1.2;
+            --opacity: 1;
+            z-index: 10;
+         }
+         .previous--card {
+            --card2-translateX-offset: calc(-1 * var(--card2-width) * 0.8);
+         }
+         .next--card {
+            --card2-translateX-offset: calc(var(--card2-width) * 0.8);
+         }
+         .previous--card,
+         .next--card {
+            --card2-scale-offset: 0.8;
+            --opacity: 0.4;
+            .card__desc {
+               display: none;
+            }
+         }
+      }
+
+      .slide__btn {
+         position: absolute;
+         transform: translateY(-50%);
+         z-index: 100;
+
+         .icon i {
+            font-size: 6rem;
+            color: #192a44cb;
+         }
+      }
+      .left__btn {
+         left: 5%;
+      }
+      .right__btn {
+         right: 5%;
+      }
+   }
+
+   .card__info {
+      margin-top: calc(var(--card2-width) + 220px);
+      z-index: 20;
+      position: relative;
+      color: #000;
+      text-align: center;
+      width: 400px;
+      .title {
+         font-family: $font-title-2;
+         color: #f1d251;
+         font-weight: 500;
+         margin-bottom: 2rem;
+      }
+
+      .desc {
+         color: rgb(168, 168, 168);
+         font-size: 1.2rem !important;
+         letter-spacing: 0.1rem;
+         line-height: 2.5rem;
+         word-break: break-word;
+         width: 100%;
+         margin-bottom: 5rem;
+         position: relative;
+      }
+   }
+}

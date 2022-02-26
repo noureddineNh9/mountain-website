@@ -51,13 +51,12 @@ span {
   font-family: "Bebas Neue", cursive;
   letter-spacing: 8px;
   font-size: 8rem !important;
-  text-align: center;
-  color: #192a44; }
+  text-align: center; }
 
 .heading__2 {
   text-align: center;
   font-style: italic;
-  color: #b9b9b9; }
+  letter-spacing: 0.3rem; }
 
 nav {
   display: flex;
@@ -83,8 +82,12 @@ nav {
     margin: 0;
     padding: 0; }
     nav ul li {
+      cursor: pointer;
+      transition: background-color 0.3s;
       padding: 10px 30px;
       text-transform: uppercase; }
+      nav ul li:hover {
+        background-color: rgba(255, 255, 255, 0.13); }
   nav .left__list,
   nav .right__list {
     display: flex;
@@ -150,20 +153,21 @@ nav {
       border: 0.2rem solid rgba(255, 255, 255, 0.13); }
 
 :root {
-  --card-width: 40rem;
-  --card-height: 40rem;
+  --card-width: 35rem;
+  --card-height: 35rem;
   --card-transition-duration: 800ms;
   --card-transition-easing: ease; }
 
 .slider__1 {
-  margin-top: calc(var(--card-width) * 3 / 4);
   position: relative;
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  margin-bottom: 70px; }
   .slider__1 .card__list {
+    top: calc(var(--card-width) * 4 / 5);
     position: absolute;
     width: 100%;
     max-width: calc(3 * var(--card-width));
@@ -181,34 +185,46 @@ nav {
         width: var(--card-width);
         height: var(--card-height);
         transition: transform var(--card-transition-duration) var(--card-transition-easing);
-        user-select: none;
-        clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); }
-        .slider__1 .card__list .cards__wrapper .card::before {
-          content: "";
-          position: absolute;
-          left: 0;
-          top: 0;
-          width: 100%;
-          height: 100%;
-          background: rgba(255, 255, 255, 0.877);
-          z-index: 1;
-          transition: opacity var(--card-transition-duration) var(--card-transition-easing);
-          opacity: calc(1 - var(--opacity)); }
+        user-select: none; }
         .slider__1 .card__list .cards__wrapper .card .card__image {
           position: relative;
           width: 100%;
-          height: 100%; }
-        .slider__1 .card__list .cards__wrapper .card .card__image img {
-          position: absolute;
-          left: 0;
-          top: 0;
-          width: 100%;
           height: 100%;
-          object-fit: cover; }
+          clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); }
+          .slider__1 .card__list .cards__wrapper .card .card__image img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; }
+          .slider__1 .card__list .cards__wrapper .card .card__image::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.877);
+            z-index: 1;
+            transition: opacity var(--card-transition-duration) var(--card-transition-easing);
+            opacity: calc(1 - var(--opacity)); }
+        .slider__1 .card__list .cards__wrapper .card::after {
+          content: "";
+          position: absolute;
+          transform: translate(-50%, -50%);
+          top: 50%;
+          left: 50%;
+          width: calc(var(--card-width) + 2px);
+          height: calc(var(--card-width) + 2px);
+          background: rgba(0, 0, 0, 0.534);
+          z-index: -1;
+          transition: opacity var(--card-transition-duration) var(--card-transition-easing);
+          clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); }
       .slider__1 .card__list .cards__wrapper .current--card {
         --card-translateX-offset: 0;
         --card-scale-offset: 1.2;
-        --opacity: 0.8;
+        --opacity: 1;
         z-index: 10; }
       .slider__1 .card__list .cards__wrapper .previous--card {
         --card-translateX-offset: calc(-1 * var(--card-width) * 0.8); }
@@ -233,12 +249,10 @@ nav {
     .slider__1 .card__list .right__btn {
       right: 5%; }
   .slider__1 .card__info {
+    margin-top: calc(var(--card-width) * 2 / 3);
     z-index: 20;
-    position: absolute;
+    position: relative;
     color: #000;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     text-align: center;
     width: 100%; }
     .slider__1 .card__info .title {
@@ -253,8 +267,8 @@ nav {
       max-width: 70rem;
       transform: translateX(-50%);
       left: 50%;
-      top: 18rem;
-      position: absolute; }
+      margin-top: 130px;
+      position: relative; }
       .slider__1 .card__info .details::before {
         position: absolute;
         content: "";
@@ -299,3 +313,227 @@ nav {
         padding-right: 52%; }
       .slider__1 .card__info .details .right__para {
         padding-left: 52%; }
+
+:root {
+  --card2-width: 30rem;
+  --card2-height: 30rem;
+  --card2-transition-duration: 800ms;
+  --card2-transition-easing: ease; }
+
+.slider__2 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 70px; }
+  .slider__2 .card__list {
+    top: calc(var(--card2-width) * 4 / 5);
+    position: absolute;
+    width: 100%;
+    max-width: calc(3 * var(--card2-width));
+    height: auto; }
+    .slider__2 .card__list .cards__wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.1));
+      vertical-align: middle; }
+      .slider__2 .card__list .cards__wrapper .card {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) translateX(var(--card2-translateX-offset)) scale(var(--card2-scale-offset));
+        display: inline-block;
+        width: var(--card2-width);
+        height: var(--card2-height);
+        transition: transform var(--card2-transition-duration) var(--card2-transition-easing);
+        user-select: none; }
+        .slider__2 .card__list .cards__wrapper .card .card__image {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); }
+          .slider__2 .card__list .cards__wrapper .card .card__image img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; }
+          .slider__2 .card__list .cards__wrapper .card .card__image::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.877);
+            z-index: 1;
+            transition: opacity var(--card2-transition-duration) var(--card2-transition-easing);
+            opacity: calc(1 - var(--opacity)); }
+        .slider__2 .card__list .cards__wrapper .card::after {
+          content: "";
+          position: absolute;
+          transform: translate(-50%, -50%);
+          top: 50%;
+          left: 50%;
+          width: calc(var(--card2-width) + 2px);
+          height: calc(var(--card2-width) + 2px);
+          background: rgba(0, 0, 0, 0.534);
+          z-index: -1;
+          transition: opacity var(--card2-transition-duration) var(--card2-transition-easing);
+          clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); }
+      .slider__2 .card__list .cards__wrapper .current--card {
+        --card2-translateX-offset: 0;
+        --card2-scale-offset: 1.2;
+        --opacity: 1;
+        z-index: 10; }
+      .slider__2 .card__list .cards__wrapper .previous--card {
+        --card2-translateX-offset: calc(-1 * var(--card2-width) * 0.8); }
+      .slider__2 .card__list .cards__wrapper .next--card {
+        --card2-translateX-offset: calc(var(--card2-width) * 0.8); }
+      .slider__2 .card__list .cards__wrapper .previous--card,
+      .slider__2 .card__list .cards__wrapper .next--card {
+        --card2-scale-offset: 0.8;
+        --opacity: 0.4; }
+        .slider__2 .card__list .cards__wrapper .previous--card .card__desc,
+        .slider__2 .card__list .cards__wrapper .next--card .card__desc {
+          display: none; }
+    .slider__2 .card__list .slide__btn {
+      position: absolute;
+      transform: translateY(-50%);
+      z-index: 100; }
+      .slider__2 .card__list .slide__btn .icon i {
+        font-size: 6rem;
+        color: #192a44cb; }
+    .slider__2 .card__list .left__btn {
+      left: 5%; }
+    .slider__2 .card__list .right__btn {
+      right: 5%; }
+  .slider__2 .card__info {
+    margin-top: calc(var(--card2-width) + 220px);
+    z-index: 20;
+    position: relative;
+    color: #000;
+    text-align: center;
+    width: 400px; }
+    .slider__2 .card__info .title {
+      font-family: "Gloria Hallelujah", cursive;
+      color: #f1d251;
+      font-weight: 500;
+      margin-bottom: 2rem; }
+    .slider__2 .card__info .desc {
+      color: #a8a8a8;
+      font-size: 1.2rem !important;
+      letter-spacing: 0.1rem;
+      line-height: 2.5rem;
+      word-break: break-word;
+      width: 100%;
+      margin-bottom: 5rem;
+      position: relative; }
+
+#program {
+  background-image: linear-gradient(to bottom, white, rgba(255, 255, 255, 0.849)), url("../assets/images/program-bg.jpg");
+  background-size: cover;
+  padding-bottom: 300px; }
+  #program .heading__1 {
+    color: #192a44; }
+  #program .heading__2 {
+    color: #b9b9b9; }
+
+#challenge {
+  z-index: 20;
+  margin-top: -200px;
+  padding-top: 250px;
+  padding-bottom: 200px;
+  background-image: linear-gradient(to bottom, #001134, #10187e4d, #001134), url("../assets/images/challenge-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  clip-path: polygon(0 0, 100% 200px, 100% 100%, 0% calc(100% - 200px)); }
+  #challenge .heading__1 {
+    color: white;
+    margin-bottom: 12rem; }
+  #challenge .heading__2 {
+    color: white; }
+  #challenge .circles {
+    margin-bottom: 5rem; }
+    #challenge .circles .circle__wrapper {
+      margin: 2rem;
+      width: 18rem;
+      text-align: center; }
+      #challenge .circles .circle__wrapper .circle {
+        margin: 20px auto;
+        position: relative;
+        border: 2px solid white;
+        border-radius: 50%;
+        height: 14rem;
+        width: 14rem;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+        #challenge .circles .circle__wrapper .circle .text {
+          position: absolute;
+          font-family: "Poppins", sans-serif;
+          color: white;
+          font-size: 28px;
+          letter-spacing: 0.3rem;
+          word-break: break-all;
+          font-weight: 800;
+          line-height: 32px;
+          transform: translate(-50%, -50%);
+          top: 50%;
+          left: 50%;
+          width: 80%; }
+        #challenge .circles .circle__wrapper .circle::after {
+          position: absolute;
+          content: "";
+          transform: translate(-50%, -50%);
+          top: 50%;
+          left: 50%;
+          width: 92%;
+          height: 92%;
+          border: 2px solid white;
+          border-radius: 50%; }
+        #challenge .circles .circle__wrapper .circle::before {
+          position: absolute;
+          content: "";
+          transform: translate(-50%, -50%);
+          top: 50%;
+          left: 50%;
+          width: 115%;
+          height: 115%;
+          border: 2px solid white;
+          border-radius: 50%; }
+      #challenge .circles .circle__wrapper .circle__desc {
+        color: white;
+        letter-spacing: 1px;
+        font-weight: 500; }
+
+#team {
+  margin-top: -200px;
+  padding-top: 250px;
+  padding-bottom: 100px;
+  background-image: linear-gradient(to bottom, white, rgba(255, 255, 255, 0.849)), url("../assets/images/team-bg.jpg");
+  background-size: cover; }
+  #team .heading__1 {
+    color: #192a44; }
+  #team .heading__2 {
+    color: #b9b9b9; }
+
+#reviews {
+  z-index: 20;
+  margin-top: -200px;
+  padding-top: 250px;
+  padding-bottom: 200px;
+  background-image: linear-gradient(to bottom, #001134, #10187e4d, #001134), url("../assets/images/challenge-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  clip-path: polygon(0 200px, 100% 0, 100% calc(100% - 200px), 0% 100%); }
+  #reviews .heading__1 {
+    color: white;
+    margin-bottom: 12rem; }
+  #reviews .heading__2 {
+    color: white; }
