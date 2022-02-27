@@ -658,3 +658,6 @@ nav {
 @media screen and (max-width: 450px) {
   html {
     font-size: 42%; } }
+
+.disable {
+  opacity: 0; }
