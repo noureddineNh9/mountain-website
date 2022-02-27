@@ -130,12 +130,13 @@ $colro__1: #c7c7c79f;
    }
 
    .card__info {
-      margin-top: calc(var(--card2-width) + 220px);
+      margin-top: calc(var(--card2-width) + 22rem);
       z-index: 20;
       position: relative;
       color: #000;
       text-align: center;
       width: 400px;
+      padding: 1rem;
       .title {
          font-family: $font-title-2;
          color: #f1d251;
@@ -145,7 +146,7 @@ $colro__1: #c7c7c79f;
 
       .desc {
          color: rgb(168, 168, 168);
-         font-size: 1.2rem !important;
+         font-size: 12px !important;
          letter-spacing: 0.1rem;
          line-height: 2.5rem;
          word-break: break-word;

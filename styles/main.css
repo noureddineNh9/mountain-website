@@ -19,7 +19,7 @@ html {
   font-size: 62.5%; }
 
 body {
-  font-size: 1.4rem;
+  font-size: 14px;
   font-family: "Roboto Serif", sans-serif; }
 
 h1 {
@@ -38,7 +38,10 @@ h5 {
   font-size: 1.7rem !important; }
 
 h6 {
-  font-size: 1.5rem !important; }
+  font-size: 15px !important; }
+
+p {
+  font-size: 12px; }
 
 span {
   font-size: 1.2rem; }
@@ -419,12 +422,13 @@ nav {
     .slider__2 .card__list .right__btn {
       right: 5%; }
   .slider__2 .card__info {
-    margin-top: calc(var(--card2-width) + 220px);
+    margin-top: calc(var(--card2-width) + 22rem);
     z-index: 20;
     position: relative;
     color: #000;
     text-align: center;
-    width: 400px; }
+    width: 400px;
+    padding: 1rem; }
     .slider__2 .card__info .title {
       font-family: "Gloria Hallelujah", cursive;
       color: #f1d251;
@@ -432,7 +436,7 @@ nav {
       margin-bottom: 2rem; }
     .slider__2 .card__info .desc {
       color: #a8a8a8;
-      font-size: 1.2rem !important;
+      font-size: 12px !important;
       letter-spacing: 0.1rem;
       line-height: 2.5rem;
       word-break: break-word;
@@ -445,7 +449,7 @@ nav {
   background-size: cover;
   padding-bottom: 300px; }
   #program .heading__1 {
-    color: #192a44; }
+    color: var(--color-1); }
   #program .heading__2 {
     color: #b9b9b9; }
 
@@ -470,7 +474,7 @@ nav {
       width: 18rem;
       text-align: center; }
       #challenge .circles .circle__wrapper .circle {
-        margin: 20px auto;
+        margin: 2rem auto;
         position: relative;
         border: 2px solid white;
         border-radius: 50%;
@@ -484,11 +488,11 @@ nav {
           position: absolute;
           font-family: "Poppins", sans-serif;
           color: white;
-          font-size: 28px;
+          font-size: 2.8rem;
           letter-spacing: 0.3rem;
           word-break: break-all;
           font-weight: 800;
-          line-height: 32px;
+          line-height: 3.2rem;
           transform: translate(-50%, -50%);
           top: 50%;
           left: 50%;
@@ -525,7 +529,7 @@ nav {
   background-image: linear-gradient(to bottom, white, rgba(255, 255, 255, 0.849)), url("../assets/images/team-bg.jpg");
   background-size: cover; }
   #team .heading__1 {
-    color: #192a44; }
+    color: var(--color-1); }
   #team .heading__2 {
     color: #b9b9b9; }
 
@@ -546,7 +550,7 @@ nav {
   #reviews .reviews__container {
     max-width: 110rem;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 4rem;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -571,7 +575,9 @@ nav {
           left: 0;
           top: 0; }
       #reviews .reviews__container .reviews__item .name {
-        font-family: "Poppins", sans-serif; }
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        font-weight: 600px; }
 
 @media screen and (max-width: 900px) {
   .reviews__container {
@@ -581,7 +587,7 @@ nav {
       margin-bottom: 0rem !important; } }
 
 #booking .heading__1 {
-  color: #192a44; }
+  color: var(--color-1); }
 
 #booking .heading__2 {
   color: #b9b9b9; }
@@ -616,12 +622,12 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 45px;
-    height: 45px;
+    width: 4.5rem;
+    height: 4.5rem;
     margin: 1rem;
     border: 1px solid var(--color-1);
     border-radius: 50%;
-    font-size: 24px;
+    font-size: 2.4rem;
     color: var(--color-1); }
   #booking .icon:hover {
     opacity: 0.9; }
@@ -641,3 +647,11 @@ nav {
   #booking .form {
     max-width: 40rem;
     grid-template-columns: 1fr !important; } }
+
+@media screen and (max-width: 900px) {
+  html {
+    font-size: 52%; } }
+
+@media screen and (max-width: 450px) {
+  html {
+    font-size: 42%; } }

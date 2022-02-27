@@ -9,3 +9,14 @@
 @import "./layouts/slider__2.scss";
 
 @import "./sections.scss";
+
+@media screen and (max-width: 900px) {
+   html {
+      font-size: 52%;
+   }
+}
+@media screen and (max-width: 450px) {
+   html {
+      font-size: 42%;
+   }
+}
