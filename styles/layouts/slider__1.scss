@@ -132,6 +132,8 @@ $colro__1: #c7c7c79f;
       color: #000;
       text-align: center;
       width: 100%;
+      padding: 2rem;
+
       .title {
          color: white;
          font-weight: 500;
@@ -148,7 +150,7 @@ $colro__1: #c7c7c79f;
          max-width: 70rem;
          transform: translateX(-50%);
          left: 50%;
-         margin-top: 130px;
+         margin-top: 13rem;
          position: relative;
          &::before {
             position: absolute;

@@ -7,7 +7,8 @@
       url("../assets/images/program-bg.jpg");
    background-size: cover;
 
-   padding-bottom: 300px;
+   padding-bottom: 200px;
+   min-height: 140rem;
 
    .heading__1 {
       color: var(--color-1);
@@ -27,7 +28,7 @@
    background-size: cover;
    background-position: center;
 
-   clip-path: polygon(0 0, 100% 200px, 100% 100%, 0% calc(100% - 200px));
+   clip-path: polygon(0 0, 100% 20rem, 100% 100%, 0% calc(100% - 20rem));
 
    .heading__1 {
       color: white;
@@ -136,7 +137,7 @@
    background-size: cover;
    background-position: center;
 
-   clip-path: polygon(0 200px, 100% 0, 100% calc(100% - 200px), 0% 100%);
+   clip-path: polygon(0 20rem, 100% 0, 100% calc(100% - 20rem), 0% 100%);
 
    .heading__1 {
       color: white;
@@ -227,6 +228,7 @@
          padding: 1rem;
          border: 1px solid rgb(160, 160, 160);
          height: 6rem;
+         width: 100%;
          &:focus {
             border: 1px solid var(--color-1);
          }

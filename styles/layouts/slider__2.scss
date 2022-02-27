@@ -130,13 +130,13 @@ $colro__1: #c7c7c79f;
    }
 
    .card__info {
-      margin-top: calc(var(--card2-width) + 22rem);
+      margin-top: calc(var(--card2-width) + 18rem);
       z-index: 20;
       position: relative;
       color: #000;
       text-align: center;
       width: 400px;
-      padding: 1rem;
+      padding: 2rem;
       .title {
          font-family: $font-title-2;
          color: #f1d251;
