@@ -6,6 +6,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Paytone+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;500;600;700&display=swap");
+:root {
+  --color-1: #192a44; }
+
 *,
 ::after,
 ::before {
@@ -57,6 +60,9 @@ span {
   text-align: center;
   font-style: italic;
   letter-spacing: 0.3rem; }
+
+input {
+  outline: none; }
 
 nav {
   display: flex;
@@ -527,7 +533,7 @@ nav {
   z-index: 20;
   margin-top: -200px;
   padding-top: 250px;
-  padding-bottom: 200px;
+  padding-bottom: 100px;
   background-image: linear-gradient(to bottom, #001134, #10187e4d, #001134), url("../assets/images/challenge-bg.jpg");
   background-size: cover;
   background-position: center;
@@ -537,3 +543,101 @@ nav {
     margin-bottom: 12rem; }
   #reviews .heading__2 {
     color: white; }
+  #reviews .reviews__container {
+    max-width: 110rem;
+    margin: 0 auto;
+    padding: 2rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 4rem; }
+    #reviews .reviews__container .reviews__item {
+      color: white; }
+      #reviews .reviews__container .reviews__item:nth-of-type(odd) {
+        margin-top: -10rem;
+        margin-bottom: 10rem; }
+      #reviews .reviews__container .reviews__item .title {
+        font-family: "Poppins", sans-serif;
+        font-weight: 600; }
+      #reviews .reviews__container .reviews__item .description {
+        position: relative;
+        font-size: 12px; }
+        #reviews .reviews__container .reviews__item .description::before {
+          position: absolute;
+          content: "";
+          height: 100%;
+          width: 4px;
+          background: #fff;
+          left: 0;
+          top: 0; }
+      #reviews .reviews__container .reviews__item .name {
+        font-family: "Poppins", sans-serif; }
+
+@media screen and (max-width: 900px) {
+  .reviews__container {
+    grid-template-columns: 1fr !important; }
+    .reviews__container .reviews__item:nth-of-type(odd) {
+      margin-top: 0rem !important;
+      margin-bottom: 0rem !important; } }
+
+#booking .heading__1 {
+  color: #192a44; }
+
+#booking .heading__2 {
+  color: #b9b9b9; }
+
+#booking .form {
+  font-family: "Poppins", sans-serif;
+  padding: 2rem;
+  max-width: 90rem;
+  margin: 3rem auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  justify-content: center;
+  gap: 3rem; }
+  #booking .form input {
+    padding: 1rem;
+    border: 1px solid #a0a0a0;
+    height: 6rem; }
+    #booking .form input:focus {
+      border: 1px solid var(--color-1); }
+  #booking .form button {
+    border: 1px solid transparent;
+    background: var(--color-1);
+    color: white;
+    height: 6rem;
+    padding: 1rem 2rem;
+    margin: 0 auto; }
+
+#booking .icon {
+  transition: all 0.25s;
+  opacity: 0.4; }
+  #booking .icon i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    margin: 1rem;
+    border: 1px solid var(--color-1);
+    border-radius: 50%;
+    font-size: 24px;
+    color: var(--color-1); }
+  #booking .icon:hover {
+    opacity: 0.9; }
+
+#booking .title {
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.3rem;
+  color: #b9b9b9;
+  font-weight: 500; }
+
+#booking .footer {
+  margin: 2rem;
+  color: #b9b9b9;
+  text-align: center; }
+
+@media screen and (max-width: 900px) {
+  #booking .form {
+    max-width: 40rem;
+    grid-template-columns: 1fr !important; } }

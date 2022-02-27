@@ -130,7 +130,7 @@
    z-index: 20;
    margin-top: -200px;
    padding-top: 250px;
-   padding-bottom: 200px;
+   padding-bottom: 100px;
    background-image: linear-gradient(to bottom, #001134, #10187e4d, #001134),
       url("../assets/images/challenge-bg.jpg");
    background-size: cover;
@@ -144,5 +144,145 @@
    }
    .heading__2 {
       color: white;
+   }
+
+   .reviews__container {
+      max-width: 110rem;
+      margin: 0 auto;
+      padding: 2rem;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 4rem;
+      .reviews__item {
+         color: white;
+
+         &:nth-of-type(odd) {
+            margin-top: -10rem;
+            margin-bottom: 10rem;
+         }
+
+         .title {
+            font-family: $font-poppins;
+            font-weight: 600;
+         }
+         .description {
+            position: relative;
+            font-size: 12px;
+
+            &::before {
+               position: absolute;
+               content: "";
+               height: 100%;
+               width: 4px;
+               background: #fff;
+               left: 0;
+               top: 0;
+            }
+         }
+         .img__container {
+            img {
+            }
+         }
+
+         .name {
+            font-family: $font-poppins;
+         }
+      }
+   }
+}
+
+@media screen and (max-width: 900px) {
+   .reviews__container {
+      grid-template-columns: 1fr !important;
+      .reviews__item:nth-of-type(odd) {
+         margin-top: 0rem !important;
+         margin-bottom: 0rem !important;
+      }
+   }
+}
+
+#booking {
+   .heading__1 {
+      color: $color-1;
+   }
+   .heading__2 {
+      color: rgb(185, 185, 185);
+   }
+
+   .form {
+      font-family: $font-poppins;
+
+      padding: 2rem;
+      max-width: 90rem;
+      margin: 3rem auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr auto;
+      justify-content: center;
+      gap: 3rem;
+
+      input {
+         padding: 1rem;
+         border: 1px solid rgb(160, 160, 160);
+         height: 6rem;
+         &:focus {
+            border: 1px solid var(--color-1);
+         }
+      }
+
+      button {
+         border: 1px solid transparent;
+         background: var(--color-1);
+         color: white;
+         height: 6rem;
+         padding: 1rem 2rem;
+         margin: 0 auto;
+      }
+   }
+
+   .icon {
+      transition: all 0.25s;
+      opacity: 0.4;
+
+      i {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         width: 45px;
+         height: 45px;
+         margin: 1rem;
+         border: 1px solid var(--color-1);
+         border-radius: 50%;
+
+         font-size: 24px;
+         color: var(--color-1);
+      }
+
+      &:hover {
+         opacity: 0.9;
+      }
+   }
+
+   .title {
+      font-family: $font-Poppins;
+      letter-spacing: 0.3rem;
+      color: rgb(185, 185, 185);
+      font-weight: 500;
+   }
+
+   .footer {
+      margin: 2rem;
+      color: rgb(185, 185, 185);
+      text-align: center;
+   }
+}
+
+@media screen and (max-width: 900px) {
+   #booking {
+      .form {
+         max-width: 40rem;
+
+         grid-template-columns: 1fr !important;
+      }
    }
 }
