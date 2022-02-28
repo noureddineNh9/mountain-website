@@ -1,0 +1,5 @@
+> good structure
+> Responsive
+> Images optimisation
+> loading snipper
+> animation on scroll

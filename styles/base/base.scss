@@ -11,6 +11,10 @@ html {
 body {
    font-size: 14px;
    font-family: $font-primary;
+
+   &.loading-active {
+      overflow: hidden;
+   }
 }
 
 h1 {
