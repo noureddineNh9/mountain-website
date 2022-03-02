@@ -13,8 +13,8 @@
       ></script>
       <link rel="stylesheet" href="./styles/main.css" />
    </head>
-   <body class="loading-active">
-      <div class="loading__container">
+   <body class="-----loading-active">
+      <div class="-----loading__container">
          <div class="multi-ripple">
             <div></div>
             <div></div>
@@ -22,27 +22,46 @@
       </div>
 
       <div class="main">
-         <nav>
-            <div class="left__list">
-               <ul>
-                  <li>home</li>
-                  <li>destinations</li>
-                  <li>gallery</li>
-               </ul>
-            </div>
-            <div class="logo__cnt px-8 text-center">
-               <img class="logo" src="./assets/logo2.png" alt="logo" />
-               <h2>Mountain</h2>
-            </div>
-            <div class="right__list">
-               <ul>
-                  <li>review</li>
-                  <li>explore</li>
-                  <li>contact</li>
-               </ul>
+         <input type="checkbox" id="sidebar-checkbox" />
+         <label for="sidebar-checkbox" class="navbar__btn">
+            <div class="bg"></div>
+            <span></span>
+         </label>
+         <nav id="navbar">
+            <div class="nav__container">
+               <div class="left__list">
+                  <ul>
+                     <a href="#"><li>home</li></a>
+                     <a href="#program"><li>destinations</li></a>
+                     <a href="#challenge"><li>gallery</li></a>
+                  </ul>
+               </div>
+               <div class="logo__cnt px-8 text-center">
+                  <img class="logo" src="./assets/logo2.png" alt="logo" />
+                  <h2>Mountain</h2>
+               </div>
+               <div class="right__list">
+                  <ul>
+                     <a href="#team"><li>review</li></a>
+                     <a href="#reviews"><li>explore</li></a>
+                     <a href="#booking"><li>contact</li></a>
+                  </ul>
+               </div>
             </div>
          </nav>
 
+         <!--
+         <div class="sidebar">
+            <ul>
+               <li>azeaze</li>
+               <li>azeaze</li>
+               <li>azeaze</li>
+               <li>azeaze</li>
+               <li>azeaze</li>
+            </ul>
+         </div>
+
+         -->
          <section id="header" class="header mb-40">
             <div>
                <span class="subtitle">Road to everest</span>

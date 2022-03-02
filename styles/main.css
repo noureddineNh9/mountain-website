@@ -48,6 +48,9 @@ p {
 span {
   font-size: 1.2rem; }
 
+html {
+  scroll-behavior: smooth; }
+
 .main {
   overflow-x: hidden; }
 
@@ -104,51 +107,141 @@ input {
     transform: scale(1);
     opacity: 0; } }
 
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 20px;
-  position: absolute;
+#sidebar-checkbox {
+  display: none; }
+
+#sidebar-checkbox:checked ~ #navbar {
+  /*left: 0;*/
+  right: 0 !important;
+  opacity: 1; }
+
+#navbar {
+  position: fixed;
   top: 0;
-  right: 50%;
-  transform: translateX(50%);
-  z-index: 10;
+  z-index: 200;
   color: white;
-  max-width: 1200px;
   width: 100%;
-  margin: 0 auto; }
-  nav .logo {
+  height: 130px;
+  transition: all 0.3s; }
+  #navbar .nav__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%; }
+  #navbar.scroll__down {
+    padding-top: 0px;
+    background-color: #0000002c;
+    height: 50px; }
+    #navbar.scroll__down .logo__cnt {
+      display: none; }
+    #navbar.scroll__down .left__list,
+    #navbar.scroll__down .right__list {
+      border-bottom: none; }
+  #navbar .logo {
     width: 180px; }
-  nav ul {
+  #navbar ul {
     font-family: "Bebas Neue", cursive;
     font-size: 16px;
     letter-spacing: 1px;
     display: flex;
     margin: 0;
     padding: 0; }
-    nav ul li {
+    #navbar ul li {
       cursor: pointer;
       transition: background-color 0.3s;
-      padding: 10px 30px;
+      padding: 13px 30px 10px 30px;
       text-transform: uppercase; }
-      nav ul li:hover {
+      #navbar ul li:hover {
         background-color: rgba(255, 255, 255, 0.13); }
-  nav .left__list,
-  nav .right__list {
+  #navbar .left__list,
+  #navbar .right__list {
     display: flex;
     align-items: flex-end;
     border-bottom: 1px solid white;
     width: 100%;
-    height: 6rem; }
-  nav .left__list {
+    transition: all 0.3s; }
+  #navbar .left__list {
     justify-content: start; }
-  nav .right__list {
+  #navbar .right__list {
     justify-content: end; }
 
 @media screen and (max-width: 900px) {
-  nav ul {
-    display: none; } }
+  .navbar__btn,
+  .sidebar__close {
+    display: block !important; }
+  .logo__cnt {
+    display: none; }
+  #navbar {
+    right: -100%;
+    opacity: 0; }
+  .nav__container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    justify-content: center !important;
+    align-items: center !important; }
+    .nav__container .left__list,
+    .nav__container .right__list {
+      align-items: center !important;
+      justify-content: center !important;
+      border-bottom: none !important; }
+      .nav__container .left__list ul,
+      .nav__container .right__list ul {
+        flex-direction: column;
+        text-align: center; } }
+
+.navbar__btn {
+  display: none;
+  position: fixed;
+  z-index: 300;
+  right: 2px;
+  /*left: 20px; */
+  top: 0px;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out; }
+  .navbar__btn .bg {
+    z-index: -10;
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    height: 110px;
+    width: 110px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.24); }
+  .navbar__btn span, .navbar__btn:before, .navbar__btn:after {
+    content: "";
+    position: absolute;
+    top: calc(50% - 1px);
+    left: 30%;
+    width: 40%;
+    border-bottom: 2px solid white;
+    transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1); }
+  .navbar__btn:before {
+    transform: translateY(-8px); }
+  .navbar__btn:after {
+    transform: translateY(8px); }
+
+/* closing animation */
+#sidebar-checkbox:checked + .navbar__btn span {
+  transform: scaleX(0); }
+
+#sidebar-checkbox:checked + .navbar__btn:before {
+  transform: rotate(45deg);
+  border-color: #fff; }
+
+#sidebar-checkbox:checked + .navbar__btn:after {
+  transform: rotate(-45deg);
+  border-color: #fff; }
 
 .header {
   height: 90rem;
