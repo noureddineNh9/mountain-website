@@ -130,15 +130,6 @@ input {
     max-width: 1200px;
     margin: 0 auto;
     height: 100%; }
-  #navbar.scroll__down {
-    padding-top: 0px;
-    background-color: #0000002c;
-    height: 50px; }
-    #navbar.scroll__down .logo__cnt {
-      display: none; }
-    #navbar.scroll__down .left__list,
-    #navbar.scroll__down .right__list {
-      border-bottom: none; }
   #navbar .logo {
     width: 180px; }
   #navbar ul {

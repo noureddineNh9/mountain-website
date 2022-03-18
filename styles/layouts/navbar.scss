@@ -29,20 +29,6 @@
       height: 100%;
    }
 
-   &.scroll__down {
-      padding-top: 0px;
-      background-color: #0000002c;
-      height: 50px;
-      .logo__cnt {
-         display: none;
-      }
-
-      .left__list,
-      .right__list {
-         border-bottom: none;
-      }
-   }
-
    .logo {
       width: 180px;
    }
