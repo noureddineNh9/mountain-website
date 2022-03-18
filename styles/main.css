@@ -116,7 +116,7 @@ input {
   opacity: 1; }
 
 #navbar {
-  position: fixed;
+  position: absolute;
   top: 0;
   z-index: 200;
   color: white;

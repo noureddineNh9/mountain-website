@@ -15,6 +15,7 @@ window.onload = function () {
 };
 
 //--------------------- Navbar ----------------------
+/*
 window.addEventListener("scroll", function () {
    if (this.scrollY !== 0) {
       document.getElementById("navbar").classList.add("scroll__down");
@@ -22,7 +23,7 @@ window.addEventListener("scroll", function () {
       document.getElementById("navbar").classList.remove("scroll__down");
    }
 });
-
+*/
 window.addEventListener("resize", function () {
    if (window.innerWidth > 900) {
       this.document.getElementById("sidebar-checkbox").checked = false;
